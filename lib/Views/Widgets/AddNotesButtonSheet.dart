@@ -7,23 +7,49 @@ class Add_Notes_Button_Sheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Container(
+      height: 600,
       child: Padding(
         padding: const EdgeInsets.all(25.0),
-        child: Column(
-          children: [
-            CostumTextField(title: 'title' ),
-            SizedBox(height: 9,),
-            CostumTextField(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              CostumTextField(title: 'title' ),
+              SizedBox(height: 9,),
+              CostumTextField(
+                
+                title: 'Save',
+                maxlines: 5,),
+                SizedBox(height: 28,),
               
-              title: 'title',
-              maxlines: 5,),
-
+              costumButton()
+                
               
-            
-          ],
+            ],
+          ),
         ),
 
       ),
+    );
+  }
+}
+
+class costumButton extends StatelessWidget {
+  const costumButton({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(borderRadius: BorderRadius.circular(15),    color: Colors.blue,),
+  
+      width: MediaQuery.of(context).size.width,
+      height: 55,
+      child:  Center(
+        child: Text('Add Note'),
+        
+      ),
+
     );
   }
 }
